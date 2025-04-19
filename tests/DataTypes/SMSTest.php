@@ -5,6 +5,8 @@ use F9WebLtd\QrCode\DataTypes\SMS;
 
 class SMSTest extends TestCase
 {
+    protected SMS $sms;
+    
     public function setUp(): void
     {
         $this->sms = new SMS();

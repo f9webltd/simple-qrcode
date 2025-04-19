@@ -5,6 +5,8 @@ use F9WebLtd\QrCode\DataTypes\BTC;
 
 class BTCTest extends TestCase
 {
+    protected BTC $btc;
+    
     public function setUp(): void
     {
         $this->btc = new BTC();

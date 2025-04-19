@@ -12,7 +12,7 @@ class EmailTest extends TestCase
         $this->email = new Email();
     }
 
-    public function test_it_generates_the_proper_format_when_only_an_email_address_is_supplied()
+    public function test_it_generates_the_proper_format_when_only_an_email_address_is_supplied(): void
     {
         $this->email->create(['foo@bar.com']);
 
@@ -21,7 +21,7 @@ class EmailTest extends TestCase
         $this->assertEquals($properFormat, strval($this->email));
     }
 
-    public function test_it_generates_the_proper_format_when_an_email_subject_and_body_are_supplied()
+    public function test_it_generates_the_proper_format_when_an_email_subject_and_body_are_supplied(): void
     {
         $this->email->create(['foo@bar.com', 'foo', 'bar']);
 
@@ -30,7 +30,7 @@ class EmailTest extends TestCase
         $this->assertEquals($properFormat, strval($this->email));
     }
 
-    public function test_it_generates_the_proper_format_when_an_email_and_subject_are_supplied()
+    public function test_it_generates_the_proper_format_when_an_email_and_subject_are_supplied(): void
     {
         $this->email->create(['foo@bar.com', 'foo']);
 
@@ -39,7 +39,7 @@ class EmailTest extends TestCase
         $this->assertEquals($properFormat, strval($this->email));
     }
 
-    public function test_it_generates_the_proper_format_when_only_a_subject_is_provided()
+    public function test_it_generates_the_proper_format_when_only_a_subject_is_provided(): void
     {
         $this->email->create([null, 'foo']);
 
@@ -48,7 +48,7 @@ class EmailTest extends TestCase
         $this->assertEquals($properFormat, strval($this->email));
     }
 
-    public function test_it_throws_an_exception_when_an_invalid_email_is_given()
+    public function test_it_throws_an_exception_when_an_invalid_email_is_given(): void
     {
         $this->expectException(InvalidArgumentException::class);
 

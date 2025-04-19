@@ -56,12 +56,7 @@ class WiFi implements DataTypeInterface
         $this->setProperties($arguments);
     }
 
-    /**
-     * Returns the correct QrCode format.
-     *
-     * @return string
-     */
-    public function __toString()
+    public function __toString(): string
     {
         return $this->buildWifiString();
     }
@@ -99,15 +94,19 @@ class WiFi implements DataTypeInterface
     protected function setProperties(array $arguments)
     {
         $arguments = $arguments[0];
+  
         if (isset($arguments['encryption'])) {
             $this->encryption = $arguments['encryption'];
         }
+
         if (isset($arguments['ssid'])) {
             $this->ssid = $arguments['ssid'];
         }
+
         if (isset($arguments['password'])) {
             $this->password = $arguments['password'];
         }
+
         if (isset($arguments['hidden'])) {
             $this->hidden = $arguments['hidden'];
         }

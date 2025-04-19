@@ -12,7 +12,7 @@ class BTCTest extends TestCase
         $this->btc = new BTC();
     }
 
-    public function test_it_generates_a_valid_btc_qrcode_with_an_address_and_amount()
+    public function test_it_generates_a_valid_btc_qrcode_with_an_address_and_amount(): void
     {
         $this->btc->create(['btcaddress', 0.0034]);
 
@@ -21,7 +21,7 @@ class BTCTest extends TestCase
         $this->assertEquals($properFormat, strval($this->btc));
     }
 
-    public function test_it_generates_a_valid_btc_qrcode_with_an_address_amount_and_label()
+    public function test_it_generates_a_valid_btc_qrcode_with_an_address_amount_and_label(): void
     {
         $this->btc->create(['btcaddress', 0.0034, ['label' => 'label']]);
 
@@ -30,7 +30,7 @@ class BTCTest extends TestCase
         $this->assertEquals($properFormat, strval($this->btc));
     }
 
-    public function test_it_generates_a_valid_btc_qrcode_with_an_address_amount_label_message_and_return_address()
+    public function test_it_generates_a_valid_btc_qrcode_with_an_address_amount_label_message_and_return_address(): void
     {
         $this->btc->create([
             'btcaddress',

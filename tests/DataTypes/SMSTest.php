@@ -12,7 +12,7 @@ class SMSTest extends TestCase
         $this->sms = new SMS();
     }
 
-    public function test_it_generates_a_proper_format_with_a_phone_number()
+    public function test_it_generates_a_proper_format_with_a_phone_number(): void
     {
         $this->sms->create(['555-555-5555']);
 
@@ -21,7 +21,7 @@ class SMSTest extends TestCase
         $this->assertEquals($properFormat, strval($this->sms));
     }
 
-    public function test_it_generate_a_proper_format_with_a_message()
+    public function test_it_generate_a_proper_format_with_a_message(): void
     {
         $this->sms->create([null, 'foo']);
 
@@ -30,7 +30,7 @@ class SMSTest extends TestCase
         $this->assertEquals($properFormat, strval($this->sms));
     }
 
-    public function test_it_generates_a_proper_format_with_a_phone_number_and_message()
+    public function test_it_generates_a_proper_format_with_a_phone_number_and_message(): void
     {
         $this->sms->create(['555-555-5555', 'foo']);
 

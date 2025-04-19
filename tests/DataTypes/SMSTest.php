@@ -18,7 +18,7 @@ class SMSTest extends TestCase
 
         $properFormat = 'sms:555-555-5555';
 
-        $this->assertEquals($properFormat, strval($this->sms));
+        $this->assertEquals($properFormat, \strval($this->sms));
     }
 
     public function test_it_generate_a_proper_format_with_a_message(): void
@@ -27,7 +27,7 @@ class SMSTest extends TestCase
 
         $properFormat = 'sms:&body=foo';
 
-        $this->assertEquals($properFormat, strval($this->sms));
+        $this->assertEquals($properFormat, \strval($this->sms));
     }
 
     public function test_it_generates_a_proper_format_with_a_phone_number_and_message(): void
@@ -36,6 +36,6 @@ class SMSTest extends TestCase
 
         $properFormat = 'sms:555-555-5555&body=foo';
 
-        $this->assertEquals($properFormat, strval($this->sms));
+        $this->assertEquals($properFormat, \strval($this->sms));
     }
 }

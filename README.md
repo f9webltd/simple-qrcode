@@ -2,7 +2,7 @@
 [![Packagist Version](https://img.shields.io/packagist/v/f9webltd/simple-qrcode?style=flat-square)](https://packagist.org/packages/f9webltd/simple-qrcode)
 [![Packagist PHP Version](https://img.shields.io/packagist/php-v/f9webltd/simple-qrcode?style=flat-square)](https://packagist.org/packages/f9webltd/simple-qrcode)
 
-Simple QrCode For Laravel
+Simple QrCode Generator For Laravel
 ========================
 
 This is a PHP `^8.2` and Laravel `^10.0` / `^11.0` / `^12.0`  fork of `SimpleSoftwareIO/simple-qrcode` (which appears to be a dead repository). The fork applies the major none merged pull requests.

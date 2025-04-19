@@ -8,6 +8,7 @@
          colors="true"
          processIsolation="false"
          stopOnFailure="false"
+         displayDetailsOnPhpunitDeprecations="true"
         >
     <testsuites>
         <testsuite name="Application Test Suite">

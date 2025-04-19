@@ -5,47 +5,39 @@ use F9WebLtd\QrCode\Image;
 
 class ImageTest extends TestCase
 {
-    /**
+    /*
      * The location to save the testing image.
-     *
-     * @var string
      */
-    protected $testImageSaveLocation;
+    protected string $testImageSaveLocation;
 
-    /**
+    /*
      * The location to save the compare image.
-     *
-     * @var string
      */
-    protected $compareTestSaveLocation;
+    protected string $compareTestSaveLocation;
 
-    /**
+    /*
      * The path to the image used to test.
-     *
-     * @var string
      */
-    protected $imagePath;
+    protected string $imagePath;
 
-    /**
+    /*
      * The Image object.
-     *
-     * @var Image
      */
-    protected $image;
+    protected Image $image;
 
     public function setUp(): void
     {
-        $this->imagePath = file_get_contents(dirname(__FILE__).'/Images/simplesoftware-icon-grey-blue.png');
+        $this->imagePath = \file_get_contents(\dirname(__FILE__).'/Images/simplesoftware-icon-grey-blue.png');
         $this->image = new Image($this->imagePath);
 
-        $this->testImageSaveLocation = dirname(__FILE__).'/testImage.png';
-        $this->compareTestSaveLocation = dirname(__FILE__).'/compareImage.png';
+        $this->testImageSaveLocation = \dirname(__FILE__).'/testImage.png';
+        $this->compareTestSaveLocation = \dirname(__FILE__).'/compareImage.png';
     }
 
     public function tearDown(): void
     {
-        @unlink($this->testImageSaveLocation);
-        @unlink($this->compareTestSaveLocation);
+        @\unlink($this->testImageSaveLocation);
+        @\unlink($this->compareTestSaveLocation);
     }
 
     /**
@@ -53,11 +45,11 @@ class ImageTest extends TestCase
      */
     public function test_it_loads_an_image_string_into_a_resource(): void
     {
-        imagepng(imagecreatefromstring($this->imagePath), $this->compareTestSaveLocation);
-        imagepng($this->image->getImageResource(), $this->testImageSaveLocation);
+        \imagepng(\imagecreatefromstring($this->imagePath), $this->compareTestSaveLocation);
+        \imagepng($this->image->getImageResource(), $this->testImageSaveLocation);
 
-        $correctImage = file_get_contents($this->compareTestSaveLocation);
-        $testImage = file_get_contents($this->testImageSaveLocation);
+        $correctImage = \file_get_contents($this->compareTestSaveLocation);
+        $testImage = \file_get_contents($this->testImageSaveLocation);
 
         $this->assertEquals($correctImage, $testImage);
     }

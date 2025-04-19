@@ -11,7 +11,7 @@ Simple QrCode is an easy to use wrapper for the popular Laravel framework based 
 
 `composer require f9webltd/simple-qrcode`
 
-## Usage
+## Quick Start
 
 #### Within a Blade view
 

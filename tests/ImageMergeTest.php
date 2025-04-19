@@ -1,8 +1,8 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use SimpleSoftwareIO\QrCode\Image;
-use SimpleSoftwareIO\QrCode\ImageMerge;
+use F9WebLtd\QrCode\Image;
+use F9WebLtd\QrCode\ImageMerge;
 
 class ImageMergeTest extends TestCase
 {

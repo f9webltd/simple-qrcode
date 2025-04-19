@@ -2,7 +2,6 @@
 
 use PHPUnit\Framework\TestCase;
 use F9WebLtd\QrCode\DataTypes\BTC;
-use function strval;
 
 class BTCTest extends TestCase
 {
@@ -19,7 +18,7 @@ class BTCTest extends TestCase
 
         $properFormat = 'bitcoin:btcaddress?amount=0.0034';
 
-        $this->assertEquals($properFormat, strval($this->btc));
+        $this->assertEquals($properFormat, \strval($this->btc));
     }
 
     public function test_it_generates_a_valid_btc_qrcode_with_an_address_amount_and_label(): void
@@ -28,7 +27,7 @@ class BTCTest extends TestCase
 
         $properFormat = 'bitcoin:btcaddress?amount=0.0034&label=label';
 
-        $this->assertEquals($properFormat, strval($this->btc));
+        $this->assertEquals($properFormat, \strval($this->btc));
     }
 
     public function test_it_generates_a_valid_btc_qrcode_with_an_address_amount_label_message_and_return_address(): void
@@ -43,8 +42,8 @@ class BTCTest extends TestCase
             ],
         ]);
 
-        $properFormat = 'bitcoin:btcaddress?amount=0.0034&label=label&message=message&r='.urlencode('https://www.returnaddress.com');
+        $properFormat = 'bitcoin:btcaddress?amount=0.0034&label=label&message=message&r='.\urlencode('https://www.returnaddress.com');
 
-        $this->assertEquals($properFormat, strval($this->btc));
+        $this->assertEquals($properFormat, \strval($this->btc));
     }
 }

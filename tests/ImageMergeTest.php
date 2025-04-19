@@ -59,7 +59,7 @@ class ImageMergeTest extends TestCase
         @unlink($this->compareTestSaveLocation);
     }
 
-    public function test_it_merges_two_images_together_and_centers_it()
+    public function test_it_merges_two_images_together_and_centers_it(): void
     {
         //We know the source image is 512x512 and the merge image is 200x300
         $source = imagecreatefromstring($this->testImagePath);
@@ -86,7 +86,7 @@ class ImageMergeTest extends TestCase
         $this->assertEquals(file_get_contents($this->compareTestSaveLocation), file_get_contents($this->testImageSaveLocation));
     }
 
-    public function test_it_throws_an_exception_when_percentage_is_greater_than_1()
+    public function test_it_throws_an_exception_when_percentage_is_greater_than_1(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->testImage->merge(1.1);

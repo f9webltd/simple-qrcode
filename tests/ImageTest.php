@@ -51,7 +51,7 @@ class ImageTest extends TestCase
     /**
      * Must test that the outputted PNG is the same because you can not compare resources.
      */
-    public function test_it_loads_an_image_string_into_a_resource()
+    public function test_it_loads_an_image_string_into_a_resource(): void
     {
         imagepng(imagecreatefromstring($this->imagePath), $this->compareTestSaveLocation);
         imagepng($this->image->getImageResource(), $this->testImageSaveLocation);
@@ -62,7 +62,7 @@ class ImageTest extends TestCase
         $this->assertEquals($correctImage, $testImage);
     }
 
-    public function test_it_gets_the_correct_height()
+    public function test_it_gets_the_correct_height(): void
     {
         $correctHeight = 512;
 
@@ -71,7 +71,7 @@ class ImageTest extends TestCase
         $this->assertEquals($correctHeight, $testHeight);
     }
 
-    public function test_it_gets_the_correct_width()
+    public function test_it_gets_the_correct_width(): void
     {
         $correctWidth = 512;
 

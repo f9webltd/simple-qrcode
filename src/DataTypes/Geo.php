@@ -43,12 +43,7 @@ class Geo implements DataTypeInterface
         $this->longitude = $arguments[1];
     }
 
-    /**
-     * Returns the correct QrCode format.
-     *
-     * @return string
-     */
-    public function __toString()
+    public function __toString(): string
     {
         return $this->prefix.$this->latitude.$this->separator.$this->longitude;
     }

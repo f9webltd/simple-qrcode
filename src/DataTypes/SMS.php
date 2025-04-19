@@ -42,12 +42,7 @@ class SMS implements DataTypeInterface
         $this->setProperties($arguments);
     }
 
-    /**
-     * Returns the correct QrCode format.
-     *
-     * @return string
-     */
-    public function __toString()
+    public function __toString(): string
     {
         return $this->buildSMSString();
     }

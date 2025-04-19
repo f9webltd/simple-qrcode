@@ -9,10 +9,8 @@ interface DataTypeInterface
      */
     public function create(array $arguments);
 
-    /**
+    /*
      * Returns the correct QrCode format.
-     *
-     * @return string
      */
-    public function __toString();
+    public function __toString(): string;
 }

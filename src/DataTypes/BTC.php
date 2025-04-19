@@ -56,12 +56,7 @@ class BTC implements DataTypeInterface
         $this->setProperties($arguments);
     }
 
-    /**
-     * Returns the correct QrCode format.
-     *
-     * @return string
-     */
-    public function __toString()
+    public function __toString(): string
     {
         return $this->buildBitCoinString();
     }
@@ -114,10 +109,10 @@ class BTC implements DataTypeInterface
     protected function buildBitCoinString()
     {
         $query = http_build_query([
-            'amount'    => $this->amount,
-            'label'     => $this->label,
-            'message'  => $this->message,
-            'r'         => $this->returnAddress,
+            'amount' => $this->amount,
+            'label' => $this->label,
+            'message' => $this->message,
+            'r' => $this->returnAddress,
         ]);
 
         $btc = $this->prefix.$this->address.'?'.$query;

@@ -44,12 +44,7 @@ class Email implements DataTypeInterface
         $this->setProperties($arguments);
     }
 
-    /**
-     * Returns the correct QrCode format.
-     *
-     * @return string
-     */
-    public function __toString()
+    public function __toString(): string
     {
         return $this->buildEmailString();
     }
@@ -66,7 +61,7 @@ class Email implements DataTypeInterface
         if (isset($this->subject) || isset($this->body)) {
             $data = [
                 'subject' => $this->subject,
-                'body'    => $this->body,
+                'body' => $this->body,
             ];
             $email .= '?'.http_build_query($data);
         }

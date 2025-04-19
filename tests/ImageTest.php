@@ -1,7 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use SimpleSoftwareIO\QrCode\Image;
+use F9WebLtd\QrCode\Image;
 
 class ImageTest extends TestCase
 {

@@ -1,3 +1,7 @@
+[![Run Tests - Current](https://github.com/f9webltd/simple-qrcode/actions/workflows/run-tests.yml/badge.svg)](https://github.com/f9webltd/simple-qrcode/actions/workflows/run-tests.yml)
+[![Packagist Version](https://img.shields.io/packagist/v/f9webltd/simple-qrcode?style=flat-square)](https://packagist.org/packages/f9webltd/simple-qrcode)
+[![Packagist PHP Version](https://img.shields.io/packagist/php-v/f9webltd/simple-qrcode?style=flat-square)](https://packagist.org/packages/f9webltd/simple-qrcode)
+
 Simple QrCode For Laravel
 ========================
 

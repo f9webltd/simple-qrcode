@@ -28,12 +28,7 @@ class PhoneNumber implements DataTypeInterface
         $this->phoneNumber = $arguments[0];
     }
 
-    /**
-     * Returns the correct QrCode format.
-     *
-     * @return string
-     */
-    public function __toString()
+    public function __toString(): string
     {
         return $this->prefix.$this->phoneNumber;
     }

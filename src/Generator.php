@@ -1,6 +1,6 @@
 <?php
 
-namespace SimpleSoftwareIO\QrCode;
+namespace F9WebLtd\QrCode;
 
 use BaconQrCode\Common\ErrorCorrectionLevel;
 use BaconQrCode\Encoder\Encoder;
@@ -29,7 +29,7 @@ use BaconQrCode\Renderer\RendererStyle\RendererStyle;
 use BaconQrCode\Writer;
 use BadMethodCallException;
 use InvalidArgumentException;
-use SimpleSoftwareIO\QrCode\DataTypes\DataTypeInterface;
+use F9WebLtd\QrCode\DataTypes\DataTypeInterface;
 
 class Generator
 {
@@ -571,7 +571,7 @@ class Generator
     {
         $method = ucfirst($method);
 
-        $class = "SimpleSoftwareIO\QrCode\DataTypes\\".$method;
+        $class = "F9WebLtd\QrCode\DataTypes\\".$method;
 
         return $class;
     }

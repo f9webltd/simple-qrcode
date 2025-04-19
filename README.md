@@ -1,7 +1,7 @@
 Simple QrCode For Laravel
 ========================
 
-This is a PHP `^8.0` for of `SimpleSoftwareIO/simple-qrcode` (which appears to be a dead repository). The fork applies the major none merged pull requests.
+This is a PHP `^8.2` and Laravel `^10.0` / `^11.0` / `^12.0`  fork of `SimpleSoftwareIO/simple-qrcode` (which appears to be a dead repository). The fork applies the major none merged pull requests.
 
 ## Introduction
 

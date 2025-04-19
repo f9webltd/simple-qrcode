@@ -8,10 +8,11 @@ class PhoneNumberTest extends TestCase
     public function test_it_generates_the_proper_format_for_calling_a_phone_number(): void
     {
         $phoneNumber = new PhoneNumber();
+
         $phoneNumber->create(['555-555-5555']);
 
         $properFormat = 'tel:555-555-5555';
 
-        $this->assertEquals($properFormat, strval($phoneNumber));
+        $this->assertEquals($properFormat, \strval($phoneNumber));
     }
 }

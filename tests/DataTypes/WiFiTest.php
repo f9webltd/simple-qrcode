@@ -20,7 +20,7 @@ class WiFiTest extends TestCase
 
         $properFormat = 'WIFI:S:foo;';
 
-        $this->assertEquals($properFormat, strval($this->wifi));
+        $this->assertEquals($properFormat, \strval($this->wifi));
     }
 
     public function test_it_generates_a_proper_format_for_a_ssid_that_is_hidden(): void
@@ -34,7 +34,7 @@ class WiFiTest extends TestCase
 
         $properFormat = 'WIFI:S:foo;H:true;';
 
-        $this->assertEquals($properFormat, strval($this->wifi));
+        $this->assertEquals($properFormat, \strval($this->wifi));
     }
 
     public function test_it_generates_a_proper_format_for_a_ssid_encryption_and_password(): void
@@ -49,7 +49,7 @@ class WiFiTest extends TestCase
 
         $properFormat = 'WIFI:T:WPA;S:foo;P:bar;';
 
-        $this->assertEquals($properFormat, strval($this->wifi));
+        $this->assertEquals($properFormat, \strval($this->wifi));
     }
 
     public function test_it_generates_a_proper_format_for_a_ssid_encryption_password_and_is_hidden(): void
@@ -65,6 +65,6 @@ class WiFiTest extends TestCase
 
         $properFormat = 'WIFI:T:WPA;S:foo;P:bar;H:true;';
 
-        $this->assertEquals($properFormat, strval($this->wifi));
+        $this->assertEquals($properFormat, \strval($this->wifi));
     }
 }

@@ -1,14 +1,48 @@
-Simple QrCode
+Simple QrCode For Laravel
 ========================
 
-This is a PHP `^8.0` for of `SimpleSoftwareIO/simple-qrcode` (which appears to be a dead repository). The fork applies the majorr none merged pull requests.
+This is a PHP `^8.0` for of `SimpleSoftwareIO/simple-qrcode` (which appears to be a dead repository). The fork applies the major none merged pull requests.
 
 ## Introduction
-Simple QrCode is an easy to use wrapper for the popular Laravel framework based on the great work provided by [Bacon/BaconQrCode](https://github.com/Bacon/BaconQrCode).  We created an interface that is familiar and easy to install for Laravel users.
 
-## Official Documentation
+Simple QrCode is an easy to use wrapper for the popular Laravel framework based on the great work provided by [Bacon/BaconQrCode](https://github.com/Bacon/BaconQrCode).
 
-Documentation for Simple QrCode can be found [here](https://github.com/f9webltd/simple-qrcode/tree/develop/docs/en).
+## Installation
+
+`composer require f9webltd/simple-qrcode`
+
+## Usage
+
+#### Within a Blade view
+
+```php
+{!! QrCode::size(100)->generate(Request::url()); !!}
+```
+
+#### As an image
+
+```html
+<img src="{!! QrCode::format('png')->generate('Embed me into an e-mail!'), 'QrCode.png', 'image/png') !!}" />
+```
+
+##### As an image inline (no image saved to disk)
+
+```html
+<img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(100)->generate('Make me into an QrCode!')) !!}" />
+```
+
+Full documentation available [here](https://github.com/f9webltd/simple-qrcode/blob/develop/docs/en/README.md)
+
+## Usage Outside Laravel
+
+You may use this package outside of Laravel by instantiating a new `F9WebLtd\QrCode\Generator` class.
+
+```php
+use F9WebLtd\QrCode\Generator;
+
+$qrcode = new Generator;
+$qrcode->size(500)->generate('Make a qrcode without Laravel!');
+```
 
 ## License
 

@@ -10,7 +10,7 @@ class WiFiTest extends TestCase
         $this->wifi = new WiFi();
     }
 
-    public function test_it_generates_a_proper_format_with_just_the_ssid()
+    public function test_it_generates_a_proper_format_with_just_the_ssid(): void
     {
         $this->wifi->create([
             0 => [
@@ -23,7 +23,7 @@ class WiFiTest extends TestCase
         $this->assertEquals($properFormat, strval($this->wifi));
     }
 
-    public function test_it_generates_a_proper_format_for_a_ssid_that_is_hidden()
+    public function test_it_generates_a_proper_format_for_a_ssid_that_is_hidden(): void
     {
         $this->wifi->create([
             0 => [
@@ -37,7 +37,7 @@ class WiFiTest extends TestCase
         $this->assertEquals($properFormat, strval($this->wifi));
     }
 
-    public function test_it_generates_a_proper_format_for_a_ssid_encryption_and_password()
+    public function test_it_generates_a_proper_format_for_a_ssid_encryption_and_password(): void
     {
         $this->wifi->create([
             0 => [
@@ -52,7 +52,7 @@ class WiFiTest extends TestCase
         $this->assertEquals($properFormat, strval($this->wifi));
     }
 
-    public function test_it_generates_a_proper_format_for_a_ssid_encryption_password_and_is_hidden()
+    public function test_it_generates_a_proper_format_for_a_ssid_encryption_password_and_is_hidden(): void
     {
         $this->wifi->create([
             0 => [

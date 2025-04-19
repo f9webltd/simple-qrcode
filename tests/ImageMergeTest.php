@@ -6,33 +6,25 @@ use F9WebLtd\QrCode\ImageMerge;
 
 class ImageMergeTest extends TestCase
 {
-    /**
+    /*
      * The location to save the testing image.
-     *
-     * @var string
      */
-    protected $testImageSaveLocation;
+    protected string $testImageSaveLocation;
 
-    /**
+    /*
      * The location to save the compare image.
-     *
-     * @var string
      */
-    protected $compareTestSaveLocation;
+    protected string $compareTestSaveLocation;
 
-    /**
+    /*
      * The ImageMerge Object.
-     *
-     * @var ImageMerge
      */
-    protected $testImage;
+    protected ImageMerge $testImage;
 
-    /**
+    /*
      * The location of the test image that is having an image merged over top of it.
-     *
-     * @var string
      */
-    protected $testImagePath;
+    protected string $testImagePath;
 
     /**
      * The location of the test image that is being merged.

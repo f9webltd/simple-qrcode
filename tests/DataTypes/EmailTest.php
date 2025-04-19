@@ -5,6 +5,8 @@ use F9WebLtd\QrCode\DataTypes\Email;
 
 class EmailTest extends TestCase
 {
+    protected Email $email;
+
     public function setUp(): void
     {
         $this->email = new Email();

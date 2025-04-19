@@ -1,7 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use SimpleSoftwareIO\QrCode\DataTypes\BTC;
+use F9WebLtd\QrCode\DataTypes\BTC;
 
 class BTCTest extends TestCase
 {

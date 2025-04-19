@@ -17,22 +17,22 @@ class GeneratorTest extends TestCase
 {
     public function test_chaining_is_possible(): void
     {
-        $this->assertInstanceOf(Generator::class, (new Generator)->size(100));
-        $this->assertInstanceOf(Generator::class, (new Generator)->format('eps'));
-        $this->assertInstanceOf(Generator::class, (new Generator)->color(255, 255, 255));
-        $this->assertInstanceOf(Generator::class, (new Generator)->backgroundColor(255, 255, 255));
-        $this->assertInstanceOf(Generator::class, (new Generator)->eyeColor(0, 255, 255, 255, 0, 0, 0));
-        $this->assertInstanceOf(Generator::class, (new Generator)->gradient(255, 255, 255, 0, 0, 0, 'vertical'));
-        $this->assertInstanceOf(Generator::class, (new Generator)->eye('circle'));
-        $this->assertInstanceOf(Generator::class, (new Generator)->style('round'));
-        $this->assertInstanceOf(Generator::class, (new Generator)->encoding('UTF-8'));
-        $this->assertInstanceOf(Generator::class, (new Generator)->errorCorrection('H'));
-        $this->assertInstanceOf(Generator::class, (new Generator)->margin(2));
+        $this->assertInstanceOf(Generator::class, (new Generator())->size(100));
+        $this->assertInstanceOf(Generator::class, (new Generator())->format('eps'));
+        $this->assertInstanceOf(Generator::class, (new Generator())->color(255, 255, 255));
+        $this->assertInstanceOf(Generator::class, (new Generator())->backgroundColor(255, 255, 255));
+        $this->assertInstanceOf(Generator::class, (new Generator())->eyeColor(0, 255, 255, 255, 0, 0, 0));
+        $this->assertInstanceOf(Generator::class, (new Generator())->gradient(255, 255, 255, 0, 0, 0, 'vertical'));
+        $this->assertInstanceOf(Generator::class, (new Generator())->eye('circle'));
+        $this->assertInstanceOf(Generator::class, (new Generator())->style('round'));
+        $this->assertInstanceOf(Generator::class, (new Generator())->encoding('UTF-8'));
+        $this->assertInstanceOf(Generator::class, (new Generator())->errorCorrection('H'));
+        $this->assertInstanceOf(Generator::class, (new Generator())->margin(2));
     }
 
     public function test_size_is_passed_to_the_renderer(): void
     {
-        $generator = (new Generator)->size(100);
+        $generator = (new Generator())->size(100);
 
         $this->assertEquals(100, $generator->getRendererStyle()->getSize());
     }
@@ -43,10 +43,10 @@ class GeneratorTest extends TestCase
         // $generator = (new Generator)->format('png');
         // $this->assertInstanceOf(ImagickImageBackEnd::class, $generator->getFormatter());
 
-        $generator = (new Generator)->format('svg');
+        $generator = (new Generator())->format('svg');
         $this->assertInstanceOf(SvgImageBackEnd::class, $generator->getFormatter());
 
-        $generator = (new Generator)->format('eps');
+        $generator = (new Generator())->format('eps');
         $this->assertInstanceOf(EpsImageBackEnd::class, $generator->getFormatter());
     }
 
@@ -54,23 +54,23 @@ class GeneratorTest extends TestCase
     {
         $this->expectException(InvalidArgumentException::class);
 
-        (new Generator)->format('foo');
+        (new Generator())->format('foo');
     }
 
     public function test_color_is_set(): void
     {
-        $generator = (new Generator)->color(50, 75, 100);
+        $generator = (new Generator())->color(50, 75, 100);
         $this->assertEquals(50, $generator->getFill()->getForegroundColor()->toRgb()->getRed());
         $this->assertEquals(75, $generator->getFill()->getForegroundColor()->toRgb()->getGreen());
         $this->assertEquals(100, $generator->getFill()->getForegroundColor()->toRgb()->getBlue());
 
-        $generator = (new Generator)->color(50, 75, 100, 25);
+        $generator = (new Generator())->color(50, 75, 100, 25);
         $this->assertEquals(25, $generator->getFill()->getForegroundColor()->getAlpha());
         $this->assertEquals(50, $generator->getFill()->getForegroundColor()->toRgb()->getRed());
         $this->assertEquals(75, $generator->getFill()->getForegroundColor()->toRgb()->getGreen());
         $this->assertEquals(100, $generator->getFill()->getForegroundColor()->toRgb()->getBlue());
 
-        $generator = (new Generator)->color(50, 75, 100, 0);
+        $generator = (new Generator())->color(50, 75, 100, 0);
         $this->assertEquals(0, $generator->getFill()->getForegroundColor()->getAlpha());
         $this->assertEquals(50, $generator->getFill()->getForegroundColor()->toRgb()->getRed());
         $this->assertEquals(75, $generator->getFill()->getForegroundColor()->toRgb()->getGreen());
@@ -79,12 +79,12 @@ class GeneratorTest extends TestCase
 
     public function test_background_color_is_set(): void
     {
-        $generator = (new Generator)->backgroundColor(50, 75, 100);
+        $generator = (new Generator())->backgroundColor(50, 75, 100);
         $this->assertEquals(50, $generator->getFill()->getBackgroundColor()->toRgb()->getRed());
         $this->assertEquals(75, $generator->getFill()->getBackgroundColor()->toRgb()->getGreen());
         $this->assertEquals(100, $generator->getFill()->getBackgroundColor()->toRgb()->getBlue());
 
-        $generator = (new Generator)->backgroundColor(50, 75, 100, 25);
+        $generator = (new Generator())->backgroundColor(50, 75, 100, 25);
         $this->assertEquals(25, $generator->getFill()->getBackgroundColor()->getAlpha());
         $this->assertEquals(50, $generator->getFill()->getBackgroundColor()->toRgb()->getRed());
         $this->assertEquals(75, $generator->getFill()->getBackgroundColor()->toRgb()->getGreen());
@@ -93,7 +93,7 @@ class GeneratorTest extends TestCase
 
     public function test_eye_color_is_set(): void
     {
-        $generator = (new Generator)->eyeColor(0, 0, 0, 0, 255, 255, 255);
+        $generator = (new Generator())->eyeColor(0, 0, 0, 0, 255, 255, 255);
         $generator = $generator->eyeColor(1, 0, 0, 0, 255, 255, 255);
         $generator = $generator->eyeColor(2, 0, 0, 0, 255, 255, 255);
 
@@ -111,7 +111,7 @@ class GeneratorTest extends TestCase
         $this->assertEquals(255, $generator->getFill()->getTopRightEyeFill()->getInternalColor()->getGreen());
         $this->assertEquals(255, $generator->getFill()->getTopRightEyeFill()->getInternalColor()->getBlue());
 
-        $generator = (new Generator)->eyeColor(2, 0, 0, 0, 255, 255, 255);
+        $generator = (new Generator())->eyeColor(2, 0, 0, 0, 255, 255, 255);
         $this->assertEquals(0, $generator->getFill()->getBottomLeftEyeFill()->getExternalColor()->getRed());
         $this->assertEquals(0, $generator->getFill()->getBottomLeftEyeFill()->getExternalColor()->getGreen());
         $this->assertEquals(0, $generator->getFill()->getBottomLeftEyeFill()->getExternalColor()->getBlue());
@@ -134,23 +134,23 @@ class GeneratorTest extends TestCase
 
     public function test_grandient_is_set(): void
     {
-        $generator = (new Generator)->gradient(0, 0, 0, 255, 255, 255, 'vertical');
+        $generator = (new Generator())->gradient(0, 0, 0, 255, 255, 255, 'vertical');
         $this->assertInstanceOf(Gradient::class, $generator->getFill()->getForegroundGradient());
     }
 
     public function test_eye_style_is_set(): void
     {
-        $generator = (new Generator)->eye('circle');
+        $generator = (new Generator())->eye('circle');
         $this->assertInstanceOf(SimpleCircleEye::class, $generator->getEye());
 
-        $generator = (new Generator)->eye('square');
+        $generator = (new Generator())->eye('square');
         $this->assertInstanceOf(SquareEye::class, $generator->getEye());
     }
 
     public function test_invalid_eye_throws_an_exception(): void
     {
         $this->expectException(InvalidArgumentException::class);
-        (new Generator)->eye('foo');
+        (new Generator())->eye('foo');
     }
 
     public function test_style_is_set(): void

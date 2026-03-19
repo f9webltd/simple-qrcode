@@ -5,7 +5,7 @@
 Simple QrCode Generator For Laravel
 ========================
 
-This is a PHP `^8.2` and Laravel `^10.0` / `^11.0` / `^12.0`  fork of `SimpleSoftwareIO/simple-qrcode` (which appears to be a dead repository). The fork applies the major none merged pull requests.
+This is a PHP `^8.2` and Laravel `^11.0` / `^12.0` / `^13.0`  fork of `SimpleSoftwareIO/simple-qrcode` (which appears to be a dead repository). The fork applies the major none merged pull requests.
 
 ## Introduction
 
